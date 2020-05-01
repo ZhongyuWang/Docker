@@ -1,7 +1,7 @@
 # InfluxDB
 * https://www.influxdata.com/
 
-## Setup Influxdb
+## Setup InfluxDB
 ```sh
 docker volume create influxdb
 docker run -d --restart unless-stopped --log-opt max-size=10m \

@@ -1,5 +1,4 @@
 # Docker
-
 Deployment using Docker.
 
 ## Install Docker
@@ -25,5 +24,5 @@ docker pull some_base_image
 
 ## Prepare local networking
 ```sh
-docker network create influxdb
+docker network create network
 ```

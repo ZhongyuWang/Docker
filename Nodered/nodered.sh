@@ -1,14 +1,12 @@
 #!/bin/bash
 
-## Run Grafana
-docker volume create grafana
+## Run Nodered
+docker volume create nodered
 docker run -d --restart unless-stopped --log-opt max-size=10m \
-    -p 3000:3000 \
-    -e GF_SECURITY_ADMIN_PASSWORD='grafana' \
-    -e GF_INSTALL_PLUGINS=grafana-simple-json-datasource \
-    -v grafana:/var/lib/grafana \
+    -v nodered:/var/lib/nodered \
+    -p 1880:1880 \
     --net=network \
-    --name grafana grafana/grafana
+    --name nodered nodered/node-red-docker
 
 # Install packages
 docker exec -it nodered npm install --production node-red-dashboard node-red-contrib-python-function node-red-contrib-python3-function

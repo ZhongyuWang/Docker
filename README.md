@@ -26,3 +26,17 @@ docker pull some_base_image
 ```sh
 docker network create network
 ```
+
+## Development
+
+```bash
+sudo docker build --tag container .
+
+sudo docker login
+
+sudo docker tag container container:tag
+sudo docker push container:tag
+
+#push manifest - method while waiting for https://github.com/docker/cli/pull/138
+sudo docker run --rm -v ~/.docker/config.json:/root/.docker/config.json -v $(pwd):/host weshigbee/manifest-tool push from-spec /host/manifest.yaml
+```

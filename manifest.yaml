@@ -1,0 +1,12 @@
+image: container:latest
+manifests:
+  -
+    image: container:arm
+    platform:
+      architecture: arm
+      os: linux
+  -
+    image: container:amd64
+    platform:
+      architecture: amd64
+      os: linux

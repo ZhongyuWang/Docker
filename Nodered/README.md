@@ -15,3 +15,8 @@ docker run -d --restart unless-stopped --log-opt max-size=10m \
 docker exec -it nodered npm install --production node-red-dashboard node-red-contrib-python-function node-red-contrib-python3-function
 docker restart nodered
 ```
+
+## Install python dependencies for Alpine image
+```sh
+apk add --no-cache gcc gfortran musl-dev python-dev python3-dev build-base
+```
